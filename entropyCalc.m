@@ -1,0 +1,18 @@
+function finalImage = entropyCalc(niiImg)
+%This function applies a function to calculate entropy on each individual
+%timecourse in a nifti image of the rat brain.
+xDim = size(niiImg, 1);
+yDim = size(niiImg, 2);
+zDim = size(niiImg, 3);
+
+finalImage = zeros(xDim,yDim,zDim);
+for x = 1:xDim
+    for y = 1:yDim
+        for z = 1:zDim
+            currTC = squeeze(niiImg(x,y,z,:));
+            entropVal = SampEn(3,0.6*std(currTC),currTC);
+            finalImage(x,y,z) = entropVal;
+        end
+    end
+end
+end

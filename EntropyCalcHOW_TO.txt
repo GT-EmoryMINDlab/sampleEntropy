@@ -1,0 +1,11 @@
+HOW TO RUN ENTROPY CALCULATIONS:
+
+Setup:
+- Folder with .nii files inside, and SampEn.m script file
+- Can have one folder, but I found it best to break it up into folders with two scans per folder (and the SampEn.m script file in each).
+
+Running:
+
+- Then, run instances of the SampEn.m script inside each folder (this will calculate entropy and produce individual mat files, .png images, and an "allImages.mat" file containing all the volumes in that folder.
+
+- Once this is done, add the entropyAverages.m file to your path, and run it file in the directory containing all the folders with entropy images inside of them. This function will go through each folder, concatenating each "allImages.mat" file into one large cell array containing all volumes produced in each folder (in my case 200).

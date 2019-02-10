@@ -1,0 +1,26 @@
+After Entropy Calculation:
+
+- Load ImageSets
+
+FULL MEAN VOLUMES (Flat and 3D)
+- Run Function meanImage.m
+- When producing Images, use imagesc to make background dark (min value color limit)
+
+FUNCTIONAL NETWORKS - FULL CORRELATION MATRIX + MEAN CORRELATION MATRIX
+- Load Tight Networks
+- Linearize scans with linearizeScans.m
+- results is n*m array, where m is number of scans, n is length of linearized volume.
+- then run isolateRois.m with linearized scans and tight networks
+- then run networkCC.m on the result
+- finally, run plotRearrangedCC to view image.
+
+CORTICAL AND SUBCORTICAL FIGURES
+- Load HarvOx Cortical and Subcortical
+- Linearize scans with linearizeScans.m
+- then run isolateRois.m with linearized scans and subcortical, then linearized and cortical
+- then run cortSubCC.m
+- then run cortCC.m
+- finally run displayCortSubCC and displayCortCC
+
+
+T-TEST FIGURES
